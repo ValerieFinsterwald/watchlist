@@ -1,8 +1,8 @@
 .card-category {
   background-size: cover;
-  background-position: center;
+  background-position: 0% 93%;;
   height: 180px;
-  width: 33%;
+  width: 31.391%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +10,12 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 7px;
+
+  &:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.301);
+  }
 }
+
 
 .card-category a {
   color: white;

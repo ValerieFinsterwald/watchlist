@@ -1,7 +1,14 @@
-<div class="banner" id="genre-banner">
-  <h1><%= @list.name %></h1>
-  <p class = "banner-button btn-rose"><%= @movies.count > 1 ? " #{@movies.count} Movies" : "#{@movies.count} Movie" %></p>
-</div>
+<% if @list.photo.attached? %>
+  <div class="banner" id="genre-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key%>')">
+    <h1><%= @list.name %></h1>
+    <p class = "banner-button btn-rose"><%= @movies.count == 1 ? " #{@movies.count} Movie" : "#{@movies.count} Movies" %></p>
+  </div>
+<% else %>
+  <div class="banner" id="genre-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= asset_url('genre.png') %>')">
+    <h1><%= @list.name %></h1>
+    <p class = "banner-button btn-rose"><%= @movies.count == 1 ? " #{@movies.count} Movie" : "#{@movies.count} Movies" %></p>
+  </div>
+<% end %>
 <div class="container">
   <div class="show-header">
     <div class="btn btn-rose">
