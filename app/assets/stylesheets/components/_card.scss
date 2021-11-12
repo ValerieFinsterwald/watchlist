@@ -1,0 +1,61 @@
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 7px;
+}
+
+.card-category a {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+
+}
+
+.card-movie {
+  position: relative;
+  height: 338px;
+  width: 48%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 7px;
+  img {
+    width: 100%;
+    object-fit: cover;
+    height: 160px;
+  }
+  .fa-star {
+    color: #CAB1BC;
+  }
+  .card-movie-bottom {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    height: 40px;
+    width: 95%;
+    a {
+     color: rgb(85, 25, 25)}
+     padding: 0;
+  }
+  .card-movie-text {
+    padding: 8px;
+  }
+}

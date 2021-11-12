@@ -1,6 +1,16 @@
-.navbar-lewagon {
+.navbar {
   justify-content: space-between;
-  background: white;
+  background: #cab1bc8a;
+  a {
+    padding: 0px 8px;
+  }
+  a:hover {
+    color: #9b868f;
+  }
+  .fa-film {
+    font-size: 30px;
+    color: white;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {

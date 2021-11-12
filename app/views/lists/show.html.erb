@@ -1,10 +1,28 @@
-<h1><%= @list.name %></h1>
-<h3><%= @movies.count %></h3>
-<ul>
-<% @movies.each do |movie| %>
-<% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
-<li><%= movie.title %> <%= link_to "Delete", bookmark_path(bookmark), method: :delete %></li>
-<% end %>
-</ul>
-<%= link_to "Add movie", new_list_bookmark_path(@list) %>
-<%= link_to "All Lists", lists_path%>
+<div class="banner" id="genre-banner">
+  <h1><%= @list.name %></h1>
+  <p class = "banner-button btn-rose"><%= @movies.count > 1 ? " #{@movies.count} Movies" : "#{@movies.count} Movie" %></p>
+</div>
+<div class="container">
+  <div class="show-header">
+    <div class="btn btn-rose">
+      <%= link_to "Add a movie", new_list_bookmark_path(@list) %>
+    </div>
+  </div>
+  <ul class="list cards">
+    <% @movies.each do |movie| %>
+      <% url = movie.poster_url %>
+      <div class="card-movie">
+        <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+        <li><%=image_tag url, width: 100 %></li>
+        <div class="card-movie-text">
+          <li><p> <strong><%= movie.title %>  •  </strong> <i class="fas fa-star"></i> <%= movie.rating %></p></li>
+          <li><p><%= movie.overview %></p></li>
+          <div class="card-movie-bottom">
+            <li><p> <i class="fas fa-comments"></i> <%= bookmark.comment %></li>
+            <li></p><%= link_to "Delete", bookmark_path(bookmark), method: :delete %></li>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </ul>
+</div>
